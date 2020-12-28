@@ -25,14 +25,15 @@
         }
     },
     "require": {
-        "php": "^7.2",
-        "laravel/framework": "^8.5",
-        "laravel/telescope": "^2.1",
-        "doctrine/dbal": "^2.10",
         "albertcht/invisible-recaptcha": "^1.9",
-        "alexusmai/laravel-file-manager": "^2.4",
-        "spatie/laravel-permission": "^3.6",
-        "yajra/laravel-datatables": "^1.5",
-        "rennokki/laravel-eloquent-query-cache": "^2.0"
+        "alexusmai/laravel-file-manager": "^2.5",
+        "almasaeed2010/adminlte": "^3.0",
+        "doctrine/dbal": "^2.0",
+        "intervention/image": "^2.5",
+        "laravel/telescope": "^3.0",
+        "laravel/ui": "2.4",
+        "rennokki/laravel-eloquent-query-cache": "^2.5",
+        "spatie/laravel-permission": "^3.18",
+        "yajra/laravel-datatables": "^1.5"
     }
 }

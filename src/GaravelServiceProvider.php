@@ -2,13 +2,20 @@
 
 namespace Garavel;
 
+use Garavel\Console\InstallCommand;
+use Garavel\Console\MakeFilterCommand;
+use Garavel\Console\SeedCommand;
+use Garavel\Console\UpgradeCommand;
+use Garavel\Exceptions\GaravelExceptionHandler;
+use Garavel\Utils\Ajax;
+use Garavel\ViewComposers\FlashMessageViewComposer;
+use Garavel\ViewComposers\MenuComposer;
+use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
-use TmdCore\Console\InstallCommand;
-use TmdCore\Console\MakeFilterCommand;
-use TmdCore\Console\SeedCommand;
-use TmdCore\Console\UpgradeCommand;
+
 
 class GaravelServiceProvider extends ServiceProvider {
 
@@ -32,6 +39,28 @@ class GaravelServiceProvider extends ServiceProvider {
             $url->forceScheme('https');
         }
 
+        $this->app->singleton('ajax', Ajax::class);
+        $this->loadRoutesFrom(__DIR__ . '/Base/Routes/adminlte.php');
+        $this->loadViewsFrom(__DIR__ . '/Base/Views', 'adminlte');
+
+        /*
+ * Unbind
+ * AppServiceProvider
+ *  $this->app->bind(
+        ExceptionHandler::class,
+        Handler::class
+    );
+ *
+ */
+
+        $this->app->bind(
+            ExceptionHandler::class,
+            GaravelExceptionHandler::class
+        );
+
+        View::composer('adminlte::layouts.app', FlashMessageViewComposer::class);
+        View::composer('adminlte::layouts.app', MenuComposer::class);
+
     }
 
 
@@ -44,7 +73,7 @@ class GaravelServiceProvider extends ServiceProvider {
     {
         if ($this->app->runningInConsole())
         {
-            $this->loadMigrationsFrom(__DIR__ . '/../storage/migrations');
+            $this->loadMigrationsFrom(__DIR__ . '/Storage/Migrations');
         }
     }
 
@@ -56,20 +85,23 @@ class GaravelServiceProvider extends ServiceProvider {
      */
     private function registerPublishing()
     {
+
         if ($this->app->runningInConsole())
         {
-            $this->publishes([
-                __DIR__ . '/../storage/Migrations' => database_path('migrations'),
-            ], 'tmdcore-migrations');
 
             $this->publishes([
-                __DIR__ . '/../storage/Seeds' => database_path('seeds'),
-            ], 'tmdcore-seeds');
+                __DIR__ . '/../publishes/' => base_path(),
+            ], 'garavel-project');
 
             $this->publishes([
-                __DIR__ . '/../resources' => resource_path(),
-            ], 'tmdcore-resources');
+                base_path('vendor/almasaeed2010/adminlte/dist') => public_path('vendor/adminlte/dist'),
+            ], 'theme-core');
+
+            $this->publishes([
+                base_path('vendor/almasaeed2010/adminlte/plugins') => public_path('vendor/adminlte/plugins'),
+            ], 'theme-plugins');
         }
+
     }
 
     /**
@@ -94,8 +126,8 @@ class GaravelServiceProvider extends ServiceProvider {
             config()->set('captcha.options', [
                 'hideBadge' => (boolean)json_decode(strtolower(settings('captcha.options.hideBadge'))),
                 'dataBadge' => settings('captcha.options.dataBadge'),
-                'timeout' => (int)settings('captcha.options.timeout'),
-                'debug' => (boolean)json_decode(strtolower(settings('captcha.options.debug')))
+                'timeout'   => (int)settings('captcha.options.timeout'),
+                'debug'     => (boolean)json_decode(strtolower(settings('captcha.options.debug')))
             ]);
         }
 

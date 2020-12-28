@@ -1,0 +1,1 @@
+Admin LTE view leri override edilmek istenirse bu klasör altında yeni view ler oluşturulabilir. 

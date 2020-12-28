@@ -1,0 +1,39 @@
+<?php
+
+namespace NamespacedDummyFilter;
+
+use TmdCore\Filter\Filter;
+
+class DummyFilter extends Filter
+{
+    /**
+     * @return array
+     */
+    public function filters():array
+    {
+
+        /*
+         *
+         * Sample Filter
+         *
+        $params = [
+            [
+                FILTER::PARAM_NAME => 'id',
+                FILTER::PARAM_RULES => 'required|numeric',
+                FILTER::PARAM_METHOD => function ($query, $parameterValue) {
+                    return $query->where('status', 3);
+                },
+                FILTER::PARAM_METHOD => FILTER::METHOD_EQUAL,
+                FILTER::PARAM_PREFIX            => 'user_id',
+                FILTER::PARAM_DEFAULT_VALUE     => '1',
+            ]
+        ];
+
+        return $params;
+        */
+
+        $params = [];
+        return $params;
+
+    }
+}
