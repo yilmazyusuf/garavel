@@ -45,7 +45,7 @@
             <div class="card-header">
                 <h3 class="card-title">Kullanıcı Listesi</h3>
                 <div class="card-tools">
-                    <a href="{{route('users.create')}}" class="btn btn-info btn-sm">
+                    <a href="{{route('users.create')}}" class="btn btn-dark btn-sm">
                         <i class="fas fa-plus"></i> Kullanıcı Ekle
                     </a>
                 </div>

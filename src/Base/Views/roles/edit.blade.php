@@ -88,7 +88,7 @@
                     <div class="form-group row mb-0">
                         <label for="buttons" class="col-sm-3 col-form-label"></label>
                         <div class="col-sm-4">
-                            <button type="submit" class="btn btn-info ajax_btn">Güncelle</button>
+                            <button type="submit" class="btn btn-dark ajax_btn">Güncelle</button>
                             <a href="{{route('roles.index')}}" class="btn btn-default">İptal Et</a>
                         </div>
                     </div>

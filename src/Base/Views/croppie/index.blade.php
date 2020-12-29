@@ -136,7 +136,7 @@
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
-                    <button type="button" class="btn btn-info upload_btn_{{$params['targetModal']}}">Resmi Yükle</button>
+                    <button type="button" class="btn btn-dark upload_btn_{{$params['targetModal']}}">Resmi Yükle</button>
                 </div>
             </div>
             <!-- /.modal-content -->

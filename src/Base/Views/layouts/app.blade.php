@@ -16,6 +16,16 @@
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
+    <style type="text/css">
+        * {
+            border-radius: 0 !important;
+        }
+        * {
+            -webkit-border-radius: 0 !important;
+            -moz-border-radius: 0 !important;
+            border-radius: 0 !important;
+        }
+    </style>
     @stack('styles')
 </head>
 <body class="hold-transition sidebar-mini">

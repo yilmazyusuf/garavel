@@ -9,7 +9,7 @@ use Spatie\Permission\Models\Role;
 use Garavel\Utils\Ajax;
 use Garavel\Requests\StoreRoleFormRequest;
 use Garavel\Requests\UpdateRoleFormRequest;
-use Garavel\Requests\Transformers\RoleListTransformer;
+use Garavel\Transformers\RoleListTransformer;
 use Garavel\ViewComposers\FlashMessageViewComposer;
 
 class GaravelRoleController extends Controller {

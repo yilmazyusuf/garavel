@@ -94,7 +94,7 @@
                     <div class="form-group row mb-0">
                         <label for="buttons" class="col-sm-3 col-form-label"></label>
                         <div class="col-sm-4">
-                            <button type="submit" class="btn btn-info ajax_btn">Ekle</button>
+                            <button type="submit" class="btn btn-dark ajax_btn">Ekle</button>
                             <a href="{{route('settings.index')}}" class="btn btn-default">İptal Et</a>
                         </div>
                     </div>

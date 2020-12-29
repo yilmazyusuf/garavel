@@ -39,7 +39,7 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-4">
-                            <button type="submit" class="btn btn-block btn-info btn-flat ajax_btn">Giriş Yap</button>
+                            <button type="submit" class="btn btn-block btn-dark btn-flat ajax_btn">Giriş Yap</button>
                         </div>
                         <!-- /.col -->
                     </div>

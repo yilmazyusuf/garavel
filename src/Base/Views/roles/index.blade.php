@@ -48,7 +48,7 @@
                         <h3 class="card-title">Roller</h3>
 
                         <div class="card-tools">
-                            <a href="{{route('roles.create')}}" class="btn btn-info btn-sm">
+                            <a href="{{route('roles.create')}}" class="btn btn-dark btn-sm">
                                 <i class="fas fa-plus"></i> Rol Ekle
                             </a>
                         </div>

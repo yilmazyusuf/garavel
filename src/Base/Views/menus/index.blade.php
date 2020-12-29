@@ -154,7 +154,7 @@
                         <button type="button" id="btnUpdate" class="btn btn-primary" disabled><i
                                 class="fas fa-sync-alt"></i> Güncelle
                         </button>
-                        <button type="button" id="btnAdd" class="btn btn-info"><i class="fas fa-plus"></i> Ekle</button>
+                        <button type="button" id="btnAdd" class="btn btn-dark"><i class="fas fa-plus"></i> Ekle</button>
                     </div>
                 </div>
             </div>

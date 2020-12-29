@@ -104,7 +104,7 @@
                         <h3 class="card-title">Ayarlar</h3>
 
                         <div class="card-tools">
-                            <a href="{{route('settings.create')}}" class="btn btn-info btn-sm">
+                            <a href="{{route('settings.create')}}" class="btn btn-dark btn-sm">
                                 <i class="fas fa-plus"></i> Ayar Ekle
                             </a>
                         </div>
