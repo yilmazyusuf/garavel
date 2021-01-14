@@ -22,7 +22,7 @@ if (!function_exists('settings'))
             return $settingValue;
         }
 
-        return  false;
+        return false;
     }
 
     if (!function_exists('putPermanentEnv'))
@@ -54,6 +54,24 @@ if (!function_exists('settings'))
                 "",
                 file_get_contents($path)
             ));
+        }
+    }
+
+
+    if (!function_exists('viewHelper'))
+    {
+        $components = [
+            'SelectBox'
+        ];
+        /**
+         * Get the evaluated view contents for the given view.
+         *
+         * @param  string
+         * @return \Illuminate\View\View|\Illuminate\Contracts\View\Factory
+         */
+        function viewHelper($componentPath)
+        {
+            return (new $componentPath())->render();
         }
     }
 }

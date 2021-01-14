@@ -1,4 +1,4 @@
-###### Turkuvaz Medya Kurumsal
+###### Garavel
 
 # **Laravel Core Paket**
 
